@@ -27,6 +27,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun include-html (path)
+  "Simply reads a file into and returns a string."
   (with-open-file (file path)
     (let ((string (make-string (file-length file))))
       (read-sequence string file)
@@ -73,3 +74,15 @@
 
 (defun h1 (&rest inner-html)
   (build-html "h1" (cat-string-list "" inner-html)))
+
+(defun h2 (&rest inner-html)
+  (build-html "h2" (cat-string-list "" inner-html)))
+
+(defun h3 (&rest inner-html)
+  (build-html "h3" (cat-string-list "" inner-html)))
+
+(defun ul (&rest inner-html)
+  (build-html "ul" (cat-string-list "" inner-html)))
+
+(defun li (&rest inner-html)
+  (build-html "li" (cat-string-list "" inner-html)))
