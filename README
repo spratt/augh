@@ -7,7 +7,7 @@
    (_)         (_)   (_)_  _  _  _(_)   (_) _  _  _ (_)   (_)         (_)   
    (_)         (_)     (_)(_)(_)(_)        (_)(_)(_)(_)   (_)         (_) 
 
- Another        Upstart         Generator   of HTML
+    Another           Upstart            Generator    of   HTML
 
 This is a library which generates HTML from a very simple DSL,
 allowing the including of external pre-generated HTML files.
