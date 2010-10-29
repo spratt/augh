@@ -39,6 +39,10 @@
       (cat-string-list (concatenate 'string s (car los)) (cdr los))
       s))
 
+(defun los-to-string (los)
+  "Converts a list of strings to a string by concatenating each string."
+  (cat-string-list "" los))
+
 (defun build-html (tag-name inner-html &rest attributes)
   "Builds html from given tag-name, inner-html and attributes."
   (let ((html (concatenate 'string "<" tag-name)))
@@ -52,19 +56,19 @@
 	  (concatenate 'string
 		       "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" "
 		       "\"http://www.w3.org/TR/html4/strict.dtd\">~%"
-		       (build-html "html" (cat-string-list "" inner-html)))))
+		       (build-html "html" (los-to-string inner-html)))))
 
 (defun head (&rest inner-html)
-  (build-html "head" (cat-string-list "" inner-html)))
+  (build-html "head" (los-to-string inner-html)))
 
 (defun title (&rest inner-html)
-  (build-html "title" (cat-string-list "" inner-html)))
+  (build-html "title" (los-to-string inner-html)))
 
 (defun body (&rest inner-html)
-  (build-html "body" (cat-string-list "" inner-html)))
+  (build-html "body" (los-to-string inner-html)))
 
 (defun p (&rest inner-html)
-  (build-html "p" (cat-string-list "" inner-html)))
+  (build-html "p" (los-to-string inner-html)))
 
 (defun a (inner-html &key href)
   (build-html "a" inner-html (list "href" href)))
@@ -73,16 +77,16 @@
   "<br>")
 
 (defun h1 (&rest inner-html)
-  (build-html "h1" (cat-string-list "" inner-html)))
+  (build-html "h1" (los-to-string inner-html)))
 
 (defun h2 (&rest inner-html)
-  (build-html "h2" (cat-string-list "" inner-html)))
+  (build-html "h2" (los-to-string inner-html)))
 
 (defun h3 (&rest inner-html)
-  (build-html "h3" (cat-string-list "" inner-html)))
+  (build-html "h3" (los-to-string inner-html)))
 
 (defun ul (&rest inner-html)
-  (build-html "ul" (cat-string-list "" inner-html)))
+  (build-html "ul" (los-to-string inner-html)))
 
 (defun li (&rest inner-html)
-  (build-html "li" (cat-string-list "" inner-html)))
+  (build-html "li" (los-to-string inner-html)))
